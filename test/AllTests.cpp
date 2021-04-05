@@ -25,7 +25,7 @@ TEST(Train, test2) {
     train.addCage(mersenne() % 2);
   }
 
-  EXPECT_EQ(10, 10);
+  EXPECT_EQ(10, train.getLenght());
 }
 
 TEST(Train, test3) {

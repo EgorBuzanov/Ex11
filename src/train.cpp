@@ -22,7 +22,7 @@ void Train::addCage(bool _light) {
     last = new_cage;
     new_cage->next = first;
     first->prev = new_cage;
-  } else if (last == nullptr) {
+  } else if (first != nullptr && last == nullptr) {
     last = new_cage;
     first->next = new_cage;
     new_cage->prev = first;
