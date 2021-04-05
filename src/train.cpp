@@ -16,22 +16,17 @@ void Train::addCage(bool _light) {
     new_cage->on();
   }
 
-  if (first != nullptr && last != nullptr) {
+  if (first != nullptr) {
     new_cage->prev = last;
     last->next = new_cage;
     last = new_cage;
     new_cage->next = first;
     first->prev = new_cage;
-  } else if (first != nullptr && last == nullptr) {
-    last = new_cage;
-    first->next = new_cage;
-    new_cage->prev = first;
-    new_cage = first;
-    first->prev = new_cage;
   } else {
     first = new_cage;
     first->next = first;
     first->prev = first;
+    last = first;
   }
 }
 
